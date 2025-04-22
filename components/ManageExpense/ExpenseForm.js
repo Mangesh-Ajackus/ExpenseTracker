@@ -6,7 +6,7 @@ import Button from '../UI/Button';
 import { getFormattedDate } from '../../util/date';
 import { GlobalStyles } from '../../constants/styles';
 
-function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
+const ExpenseForm = ({ submitButtonLabel, onCancel, onSubmit, defaultValues }) => {
   const [inputs, setInputs] = useState({
     amount: {
       value: defaultValues ? defaultValues.amount.toString() : '',
@@ -22,7 +22,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
     },
   });
 
-  function inputChangedHandler(inputIdentifier, enteredValue) {
+  const inputChangedHandler = (inputIdentifier, enteredValue) => {
     setInputs((curInputs) => {
       return {
         ...curInputs,
@@ -31,7 +31,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
     });
   }
 
-  function submitHandler() {
+  const submitHandler = () => {
     const expenseData = {
       amount: +inputs.amount.value,
       date: new Date(inputs.date.value),

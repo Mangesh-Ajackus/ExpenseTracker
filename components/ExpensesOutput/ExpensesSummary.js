@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import { GlobalStyles } from '../../constants/styles';
 
-function ExpensesSummary({ expenses, periodName }) {
+const ExpensesSummary = ({ expenses, periodName }) => {
     // reduce()- array built in method - allow you to combine multiple value in a array into a single value or number
     // (sum, expense) 1st arg and '0' is 2nd arg , if we don't add '0' then it will be undefined
   const expensesSum = expenses.reduce((sum, expense) => {
